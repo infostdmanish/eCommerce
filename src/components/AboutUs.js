@@ -3,7 +3,6 @@ import NavBar from './Navbar';
 import AlertContext from '../context/AlertContext';
 import AlertComponent from "./CustomAlert";
 import Footer from './Footer';
-
 import './AboutUs.css';
 function AboutUs() {
     const { alertMsg } = useContext(AlertContext);
