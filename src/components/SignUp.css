@@ -1,0 +1,39 @@
+.form-container{
+    margin: 20px;
+    position: absolute;
+    top: 5%;
+    vertical-align: middle;
+    text-align: left;
+    left: 35%;
+    width: 500px;
+    
+}
+
+.btn-create {
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 0;
+    padding: 1.5rem 2.2rem;
+    letter-spacing: -.02em;
+    display: block;
+    width: 100%;
+    transition: all .3s;
+    text-transform: uppercase;
+    border-radius: 0;
+    margin-bottom: 10px;
+}
+.login-form p {
+    color:gray;
+    text-align: justify;
+    font-family: ui-sans-serif;
+}
+.footer-signup {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    z-index:1;
+  }

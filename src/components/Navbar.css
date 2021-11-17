@@ -1,0 +1,35 @@
+.logo{
+    position:relative; 
+    z-index: 1;
+    width: 100px;
+    height:  50px;
+}
+.badgeColor {
+    font-size: 0.95em !important;
+    color: #93252f8f !important;
+    background-color: #ffe38e!important;
+  
+}
+.loginModel .modal-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    border-bottom:none;
+    border-top-left-radius: calc(.3rem - 1px);
+    border-top-right-radius: calc(.3rem - 1px);
+    margin-bottom: -20px;
+    
+}
+
+.loginModel .modal-title {
+    margin-left: 10px;
+    font-family: Poppins,sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    line-height: 1.45;
+    
+
+}

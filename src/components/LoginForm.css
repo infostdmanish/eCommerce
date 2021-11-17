@@ -1,0 +1,54 @@
+.btn-submit {
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 0;
+    padding: 1.5rem 2.2rem;
+    letter-spacing: -.02em;
+    display: block;
+    width: 100%;
+    transition: all .3s;
+    text-transform: uppercase;
+    border-radius: 0;
+    margin-bottom: 10px;
+}
+.btn-forget {
+    font-size: 0.8rem;
+    font-family: Open Sans,sans-serif;
+    font-weight: 600;
+    color: #222529!important;
+    float: right;
+    text-decoration: none;
+    margin-bottom: 10px;
+    
+}
+.form-check{
+    float:left;
+}
+.login-form label{
+    color: #777;
+    font-family: Open Sans,sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.57;
+    margin-bottom: .6rem;
+}
+.login-form{
+    margin: 0px 10px 0px 10px;
+
+}
+.link-container{
+    text-align: center;
+    margin: 10px;
+;
+}
+.sign-link{
+    font-size: 1rem;
+    letter-spacing: -.025em;
+    color: #222529!important;
+    text-transform: none;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: Poppins,sans-serif;
+    line-height: 1.429;
+}
+
