@@ -6,7 +6,6 @@ import Footer from './Footer';
 
 import './AboutUs.css';
 function AboutUs() {
-
     const { alertMsg } = useContext(AlertContext);
     return (
         <>
