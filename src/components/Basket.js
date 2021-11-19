@@ -1,32 +1,46 @@
-import React,{useState, useContext} from 'react'
+import React, { useState, useContext } from 'react'
 import NavBar from './Navbar';
 import './Basket.css';
 import { Image, Button } from 'react-bootstrap';
 
-import { FaPlus, FaMinus } from 'react-icons/fa'
+import { FaPlus, FaMinus, FaArrowRight,FaShoppingBag } from 'react-icons/fa'
 
 import PayWithPayPal from './PayWithPayPal';
 import AlertComponent from "./CustomAlert";
 import AlertContext from '../context/AlertContext';
+
+import { useHistory } from 'react-router';
 
 export default function Basket(props) {
   const { cartItems, onAdd, onRemove } = props;
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0);
 
   const [checkout, setCheckout] = useState(false);
-  const  {alertMsg}  = useContext(AlertContext);
+  const { alertMsg } = useContext(AlertContext);
+  const history = useHistory();
+  
+  const handleReturnBtn= (e)=>{
+    history.push("/home");
+  }
 
   return (
     <>
       <NavBar countCartItems={cartItems.length} />
-      <AlertComponent alertMsg={alertMsg}/>
-
-      <h3 className="cart-title">Shopping Cart</h3>
+      <AlertComponent alertMsg={alertMsg} />
+      <div className="title-container">
+        <h3 className="cart-title">SHOPPING CART</h3>
+      </div>
+      
       {cartItems.length === 0 ? (
-        <div>No products added to the cart</div>
+        <div className="empty-text">
+          <FaShoppingBag size="120" color="#d3d3d4" style={{marginTop:'20px'}}/>
+          <p>No products added to the cart</p>
+          <Button onClick={()=>handleReturnBtn()} variant="primary" size="md"> Return to Shop</Button>
+          </div>
 
       ) : (
-        <div>
+        <div className="main-container">
+          <div className="table-container">
           <table striped bordered hover className="cart_table">
             <thead>
               <tr>
@@ -63,11 +77,27 @@ export default function Basket(props) {
               <th>$ {itemsPrice}</th>
             </tr>
           </table>
-          {checkout ? (<PayWithPayPal total={itemsPrice} cartItems={cartItems} />) :
-            (<Button variant="primary" size="lg" onClick={() => { setCheckout(true) }} active>
-              Checkout
-            </Button>)
-          }
+          </div>
+          <div className="checkoutContainer">
+            <h5>CART TOTALS</h5>
+            <div className="subtotal row my-3">
+              <div className="col-6">Subtotal</div>
+              <div className="col-6">$ {itemsPrice}</div>
+            </div>
+            <div className="shipping row my-3">
+              <div className="col-6"> Shipping Flat Rate</div>
+              <div className="col-6">$ 10</div>
+            </div>
+            <div className="total row my-3">
+              <div className="col-6"> Total</div>
+              <div className="col-6">$ {itemsPrice + 10}</div>
+            </div>
+            {checkout ? (<PayWithPayPal total={itemsPrice + 10} cartItems={cartItems} />) :
+              (<Button variant="dark" size="md" onClick={() => { setCheckout(true) }} active>
+                PROCEED TO CHECKOUT <FaArrowRight />
+              </Button>)
+            }
+          </div>
         </div>
 
       )
